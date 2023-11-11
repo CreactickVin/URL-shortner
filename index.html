@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>URL shortner</title>
+  <title>URL shorter</title>
 
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,42 +17,260 @@
       --black: #Black;
       --grey: #181E29;
       --lite: #C9CED6;
+      --btn-border: #353C4A;
     }
 
     @font-face {
       font-family: 'SF-Pro';
-      src: url('font/SF-Pro-Text-Semibold.otf') format('opentype');
-      font-weight: 800;
+      src: url('font/SF-Pro-Display-Heavy.otf') format('opentype');
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: 'SF-Pro';
+      src: url('font/SF-Pro-Display-Heavy.otf') format('opentype');
+      font-weight: 200;
+    }
+
+    @font-face {
+      font-family: 'SF-Pro';
+      src: url('font/SF-Pro-Display-Regular.otf') format('opentype');
+      font-weight: 100;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--lite);
     }
 
     body {
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
+      background-image: url("/images/Swirl.png"), url("/images/Cubes.png");
+      background-position: top, center;
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto;
       background-color: #0B101B;
-      background-image: url("/images/Cubes.png"), url("/images/Swirl.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      color: var(--lite);
       font-family: 'SF-Pro', sans-serif;
+      font-weight: 100;
     }
 
     .brand-name {
-      background: radial-gradient(12441.24% 97.1% at 5.56% 79.01%, #EB568E 0%, #144EE3 100%);
+      background: radial-gradient(95.19% 12441.23% at 5.56% 79.01%, #EB568E 0%, #144EE3 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 40px;
-      font-weight: 800;
+      font-weight: 200;
+    }
+
+    .btn-login {
+      background-color: var(--grey);
+      font-weight: 200;
+    }
+
+    .btn-register {
+      background-color: var(--primary-blue);
+      border: 1px solid var(--primary-blue);
+      box-shadow: 10px 9px 22px 0 rgba(20, 78, 227, 0.38);
+      font-weight: 200;
+    }
+
+    .tagline {
+      font-size: 50px;
+      background: linear-gradient(89.92deg, #144EE3 -0.02%, #EB568E 18.86%, #A353AA 64.49%, #144EE3 100.67%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .description {
+      width: 544px;
+    }
+
+    .search-wrapper {
+      width: 600px;
+      background-color: var(--grey);
+      border: 3px solid #353c4a;
+    }
+
+    .searchbar {
+      background-color: var(--grey);
+      border: none;
+      outline: none;
+      caret-color: var(--primary-pink);
+      font-weight: 100;
+    }
+
+    .btn-short {
+      background-color: var(--primary-blue);
+      box-shadow: 10px 9px 22px 0px rgba(20, 78, 227, 0.38);
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    .toggle-box {
+      border: 2px solid #353c4a;
+      background-color: var(--grey);
+      width: 44px;
+      height: 25px;
+      position: relative;
+    }
+
+    .toggle-dot {
+      height: 13px;
+      width: 13px;
+      background-color: var(--primary-blue);
+      position: absolute;
+      top: 4px;
+      right: 3px;
+    }
+
+    .dark-pink {
+      font-weight: 200;
+      color: var(--primary-pink);
+    }
+
+    tr > th {
+      padding: 1rem !important;
+      color: var(--lite) !important;
+      background-color: var(--grey) !important;
+    }
+
+    tr {
+      margin: 3px 0 !important;
+      color: var(--lite) !important;
+      background: rgba(24, 30, 41, 0.22);
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.10) !important;
+      backdrop-filter: blur(28px) !important;
+    }
+
+    .icon-circle {
+      height: 16px;
+      width: 16px;
+      background-color: rgba(28, 40, 63, 0.69);
     }
   </style>
 </head>
 <body>
-<div class="navigation-container mt-3 d-flex justify-content-around align-items-center">
-  <div class="brand-name">Linkly®</div>
-  <div class="action-buttons">
-    <button>Login</button>
-    <button>Register Now</button>
+
+<div class="container mt-4 d-flex justify-content-between align-items-center">
+  <div class="logo">
+    <span class="brand-name fs-3">Linkly</span><span class="text-secondary">®</span>
   </div>
 
+  <div>
+    <button class="btn-login btn btn-dark px-4 py-3 rounded-pill text-light border-2">Login
+      <img class="ms-1" src="./icons/sign-in.svg" alt="slider"></button>
+    <button class="btn-register btn btn-primary px-5 py-3 ms-3 rounded-pill text-light">Register
+      Now
+    </button>
+  </div>
 </div>
+
+
+<div class="container d-flex flex-column align-items-center justify-content-center mt-5 pt-5">
+  <h1 class="tagline">Shorten Your Loooong Links :)</h1>
+  <p class="description mt-3  text-center">Linkly is an efficient and easy-to-use URL shortening service that
+    streamlines your online experience .</p>
+
+  <div class="search-wrapper mt-4 ps-4 pt-1 pe-1 pb-1 d-flex justify-content-between rounded-pill">
+    <div class="d-flex align-items-center">
+      <img src="./icons/link-plain.svg" alt="link">
+      <input type="text" class="searchbar ms-3 text-light" value="Enter link here "></div>
+    <button class="btn-short btn btn-primary px-4 py-3 rounded-pill text-light">Shorten Now!</button>
+  </div>
+
+  <div class="d-flex my-4">
+    <div class="toggle-box rounded-pill">
+      <div class="toggle-dot rounded-pill"></div>
+    </div>
+    <span class="ms-3">Auto Paste from Clipboard </span>
+  </div>
+
+  <div class="my-3">
+    <span>You can create
+      <span class="dark-pink">05</span> more links. Register  Now to enjoy Unlimited usage</span>
+    <img class="ms-2" src="./icons/question-circle.svg" alt="question mark circle">
+  </div>
+</div>
+
+
+<div class="container">
+  <table class="table">
+
+    <tr>
+      <th>Short Link</th>
+      <th>Original Link</th>
+      <th>QR Code</th>
+      <th>Clicks</th>
+      <th>Status</th>
+      <th>Date <img src="./icons/slider.svg" alt="sort slider"></th>
+    </tr>
+
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj
+        <img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/twitter-logo.png" alt="twitter"><a href="https://www.twitter.com/tweets/8erelCoihu/">https://www.twitter.com/tweets/8erelCoihu/</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>1313</td>
+      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td>Oct - 10 -2023</td>
+    </tr>
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
+      <td><img src="./images/youtube-logo.png" alt="youtube"><a href="https://www.youtube.com/watch?v=8J7ZmH0lXuk">https://www.youtube.com/watch?v=8J7ZmH0lXuk</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>1313</td>
+      <td>Inactive <span><img src="./icons/unlink.svg" alt="unlink"></span></td>
+      <td>Oct - 10 -2023</td>
+    </tr>
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
+      <td><img src="./images/a-logo.png" alt="a"><a href="https://www.adventuresinwanderlust.com/">https://www.adventuresinwanderlust.com/</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>4313</td>
+      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td>Oct - 08 -2023</td>
+    </tr>
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
+      <td><img src="./images/v-logo.png" alt="v"><a href="https://vimeo.com/625257654">https://vimeo.com/625257654</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>1013</td>
+      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td>Oct - 01 -2023</td>
+    </tr>
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
+      <td><img src="./images/unsplash-logo.png" alt="twitter"><a href="https://unsplash.com/photos/2KjNwOzFfVQ">https://unsplash.com/photos/2KjNwOzFfVQ</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>1313</td>
+      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td>Sep - 20 -2023</td>
+    </tr>
+    <tr class="table-dark">
+      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
+      <td><img src="./images/youtube-logo.png" alt="youtube"><a href="https://www.travelwiththejoneses.com/">https://www.travelwiththejoneses.com/</a>
+      </td>
+      <td><img src="./icons/qr.svg" alt="qr code"></td>
+      <td>1423</td>
+      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td>Sep - 18 -2023</td>
+    </tr>
+
+
+  </table>
+
+</div>
+
 </body>
 </html>
