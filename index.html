@@ -18,6 +18,8 @@
       --grey: #181E29;
       --lite: #C9CED6;
       --btn-border: #353C4A;
+      --active-green: #1EB036;
+      --inactive-yellow: #B0901E;
     }
 
     @font-face {
@@ -51,7 +53,7 @@
     body {
       height: 100%;
       width: 100%;
-      background-image: url("/images/Swirl.png"), url("/images/Cubes.png");
+      background-image: url("/images/Cubes.png"), url("/images/Swirl.png");
       background-position: top, center;
       background-repeat: no-repeat, no-repeat;
       background-size: auto;
@@ -60,6 +62,16 @@
       font-family: 'SF-Pro', sans-serif;
       font-weight: 100;
     }
+
+
+    /*@keyframes rotate-bg {*/
+    /*  0% {*/
+    /*    transform: rotate(0deg);*/
+    /*  }*/
+    /*  100% {*/
+    /*    transform: rotate(360deg);*/
+    /*  }*/
+    /*}*/
 
     .brand-name {
       background: radial-gradient(95.19% 12441.23% at 5.56% 79.01%, #EB568E 0%, #144EE3 100%);
@@ -97,7 +109,12 @@
       border: 3px solid #353c4a;
     }
 
+    .input-wrapper {
+      width: 70%;
+    }
+
     .searchbar {
+      width: 100%;
       background-color: var(--grey);
       border: none;
       outline: none;
@@ -106,6 +123,7 @@
     }
 
     .btn-short {
+      width: 30%;
       background-color: var(--primary-blue);
       box-shadow: 10px 9px 22px 0px rgba(20, 78, 227, 0.38);
       font-size: 14px;
@@ -134,29 +152,51 @@
       color: var(--primary-pink);
     }
 
-    tr > th {
-      padding: 1rem !important;
-      color: var(--lite) !important;
-      background-color: var(--grey) !important;
+    .green {
+      color: var(--active-green) !important;
     }
 
-    tr {
-      margin: 3px 0 !important;
-      color: var(--lite) !important;
-      background: rgba(24, 30, 41, 0.22);
-      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.10) !important;
-      backdrop-filter: blur(28px) !important;
+    .yellow {
+      color: var(--inactive-yellow) !important;
     }
 
-    .icon-circle {
-      height: 16px;
-      width: 16px;
-      background-color: rgba(28, 40, 63, 0.69);
+    /*changes heading color of table*/
+    thead > tr {
+      --bs-table-bg: #181E29;
+    }
+
+    /*changes table body background color & removes border*/
+    tbody > tr {
+      --bs-table-bg: #0f1520;
+    }
+
+    /*adds padding & removes border*/
+    .table > :not(caption) > * > * {
+      padding: 1rem 1.2rem;
+      margin: 5rem;
+      border: 10px solid transparent !important;
+    }
+
+    table > thead > tr > th:nth-child(1) {
+      border-top-left-radius: 10px;
+    }
+
+    table > thead > tr > th:last-child {
+      border-top-right-radius: 10px;
+    }
+
+    .footer {
+      height: 60px;
+      backdrop-filter: blur(20px);
+    }
+
+    .link-register {
+      color: var(--primary-blue);
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
 <div class="container mt-4 d-flex justify-content-between align-items-center">
   <div class="logo">
     <span class="brand-name fs-3">Linkly</span><span class="text-secondary">®</span>
@@ -177,11 +217,13 @@
   <p class="description mt-3  text-center">Linkly is an efficient and easy-to-use URL shortening service that
     streamlines your online experience .</p>
 
-  <div class="search-wrapper mt-4 ps-4 pt-1 pe-1 pb-1 d-flex justify-content-between rounded-pill">
-    <div class="d-flex align-items-center">
+  <div class="search-wrapper mt-4 ps-4 pt-1 pe-1 pb-1 d-flex  rounded-pill">
+    <div class="input-wrapper d-flex align-items-center">
       <img src="./icons/link-plain.svg" alt="link">
-      <input type="text" class="searchbar ms-3 text-light" value="Enter link here "></div>
-    <button class="btn-short btn btn-primary px-4 py-3 rounded-pill text-light">Shorten Now!</button>
+      <input type="text" class="searchbar mx-3 text-light" placeholder="Enter link here"
+             onkeydown="handleInput(event)"></div>
+    <button class="btn-short btn btn-primary px-4 py-3 rounded-pill text-light" onclick="handleInputButton()">Shorten
+      Now!</button>
   </div>
 
   <div class="d-flex my-4">
@@ -200,8 +242,9 @@
 
 
 <div class="container">
-  <table class="table">
 
+  <table class="table table-dark">
+    <thead>
     <tr>
       <th>Short Link</th>
       <th>Original Link</th>
@@ -210,67 +253,121 @@
       <th>Status</th>
       <th>Date <img src="./icons/slider.svg" alt="sort slider"></th>
     </tr>
+    </thead>
 
-    <tr class="table-dark">
+    <tbody>
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj
         <img src="./icons/copy.svg" alt="copy"></td>
-      <td><img src="./images/twitter-logo.png" alt="twitter"><a href="https://www.twitter.com/tweets/8erelCoihu/">https://www.twitter.com/tweets/8erelCoihu/</a>
+      <td><img src="./images/twitter-logo.png" alt="twitter"><a class="ms-3"
+                                                                href="https://www.twitter.com/tweets/8erelCoihu/">
+        https://www.twitter.com/tweets/8erelCoihu/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
       <td>Oct - 10 -2023</td>
     </tr>
-    <tr class="table-dark">
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/youtube-logo.png" alt="youtube"><a href="https://www.youtube.com/watch?v=8J7ZmH0lXuk">https://www.youtube.com/watch?v=8J7ZmH0lXuk</a>
+      <td><img src="./images/youtube-logo.png" alt="youtube"><a class="ms-3"
+                                                                href="https://www.youtube.com/watch?v=8J7ZmH0lXuk">https://www.youtube.com/watch?v=8J7ZmH0lXuk</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td>Inactive <span><img src="./icons/unlink.svg" alt="unlink"></span></td>
+      <td class="yellow">Inactive <span><img src="./icons/unlink.svg" alt="unlink"></span></td>
       <td>Oct - 10 -2023</td>
     </tr>
-    <tr class="table-dark">
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/a-logo.png" alt="a"><a href="https://www.adventuresinwanderlust.com/">https://www.adventuresinwanderlust.com/</a>
+      <td><img src="./images/a-logo.png" alt="a"><a class="ms-3" href="https://www.adventuresinwanderlust.com/">https
+        ://www.adventuresinwanderlust.com/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>4313</td>
-      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
       <td>Oct - 08 -2023</td>
     </tr>
-    <tr class="table-dark">
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/v-logo.png" alt="v"><a href="https://vimeo.com/625257654">https://vimeo.com/625257654</a>
+      <td><img src="./images/v-logo.png" alt="v"><a class="ms-3" href="https://vimeo.com/625257654">https://vimeo
+        .com/625257654</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1013</td>
-      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
       <td>Oct - 01 -2023</td>
     </tr>
-    <tr class="table-dark">
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/unsplash-logo.png" alt="twitter"><a href="https://unsplash.com/photos/2KjNwOzFfVQ">https://unsplash.com/photos/2KjNwOzFfVQ</a>
+      <td><img src="./images/unsplash-logo.png" alt="twitter"><a class="ms-3"
+                                                                 href="https://unsplash.com/photos/2KjNwOzFfVQ">https://unsplash.com/photos/2KjNwOzFfVQ</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
       <td>Sep - 20 -2023</td>
     </tr>
-    <tr class="table-dark">
+    <tr>
       <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/youtube-logo.png" alt="youtube"><a href="https://www.travelwiththejoneses.com/">https://www.travelwiththejoneses.com/</a>
+      <td><img src="./images/youtube-logo.png" alt="youtube"><a class="ms-3"
+                                                                href="https://www.travelwiththejoneses.com/">https://www.travelwiththejoneses.com/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1423</td>
-      <td>Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
       <td>Sep - 18 -2023</td>
     </tr>
-
-
+    </tbody>
   </table>
 
+  <div class="container footer sticky-bottom d-flex align-items-center justify-content-center">
+    <span>
+      <a class="link-register" href="#">Register Now</a> to enjoy Unlimited History</span>
+  </div>
+
 </div>
+
+<script>
+  const inputbar = document.querySelector('.searchbar')
+  function handleInput(event) {
+    if (event.target.value && event.key === 'Enter') {
+      //adding row
+      addRow()
+    }
+  }
+
+  function handleInputButton() {
+    if (inputbar.value !== '') {
+      //adding row
+      addRow()
+    }
+  }
+
+  function addRow() {
+    const link = inputbar.value
+
+    const row = document.createElement('tr') //makes row
+    const linkEntry = document.createElement('td') //makes shortlink div
+    const copy = document.createElement('img')
+    copy.setAttribute('src', './icons/copy.svg')
+    copy.setAttribute('alt', 'copy')
+    linkEntry.appendChild(copy)
+    // <tr>
+    // <td>https://linkly.com/Bn41aCOlnxj
+    //  <img src="./icons/copy.svg" alt="copy">
+    //  </td>
+    // <td>
+    //   <img src="./images/twitter-logo.png" alt="twitter"><a class="ms-3" href="https://www.twitter.com/tweets/8erelCoihu/">
+    //   https://www.twitter.com/tweets/8erelCoihu/</a>
+    // </td>
+    // <td><img src="./icons/qr.svg" alt="qr code"></td>
+    // <td>1313</td>
+    // <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+    // <td>Oct - 10 -2023</td>
+    // </tr>
+  }
+</script>
 
 </body>
 </html>
