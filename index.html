@@ -51,8 +51,8 @@
     }
 
     body {
-      height: 100%;
-      width: 100%;
+      /*height: 100%;*/
+      /*width: 100%;*/
       background-image: url("/images/Cubes.png"), url("/images/Swirl.png");
       background-position: top, center;
       background-repeat: no-repeat, no-repeat;
@@ -173,7 +173,7 @@
     /*adds padding & removes border*/
     .table > :not(caption) > * > * {
       padding: 1rem 1.2rem;
-      margin: 5rem;
+      margin-top: 0.18rem;
       border: 10px solid transparent !important;
     }
 
@@ -186,7 +186,9 @@
     }
 
     .footer {
-      height: 60px;
+      height: 90px;
+      background: linear-gradient(180deg, rgba(11, 16, 27, 0.00) 15.74%, rgba(11, 16, 27, 0.57) 50.38%);
+      filter: blur(21px);
       backdrop-filter: blur(20px);
     }
 
@@ -196,7 +198,7 @@
     }
   </style>
 </head>
-<body>
+<body class="d-flex flex-column align-items-center">
 <div class="container mt-4 d-flex justify-content-between align-items-center">
   <div class="logo">
     <span class="brand-name fs-3">Linkly</span><span class="text-secondary">®</span>
@@ -223,7 +225,8 @@
       <input type="text" class="searchbar mx-3 text-light" placeholder="Enter link here"
              onkeydown="handleInput(event)"></div>
     <button class="btn-short btn btn-primary px-4 py-3 rounded-pill text-light" onclick="handleInputButton()">Shorten
-      Now!</button>
+      Now!
+    </button>
   </div>
 
   <div class="d-flex my-4">
@@ -240,9 +243,7 @@
   </div>
 </div>
 
-
 <div class="container">
-
   <table class="table table-dark">
     <thead>
     <tr>
@@ -257,79 +258,145 @@
 
     <tbody>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj
-        <img src="./icons/copy.svg" alt="copy"></td>
-      <td><img src="./images/twitter-logo.png" alt="twitter"><a class="ms-3"
-                                                                href="https://www.twitter.com/tweets/8erelCoihu/">
-        https://www.twitter.com/tweets/8erelCoihu/</a>
+      <td>https://linkly.com/Bn41aCOlnxj<img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/twitter-logo.png" alt="twitter">
+        <a class="ms-3" href="https://www.twitter.com/tweets/8erelCoihu/">
+          https://www.twitter.com/tweets/8erelCoihu/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active<img src="./icons/link.svg" alt="link"></td>
       <td>Oct - 10 -2023</td>
     </tr>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/youtube-logo.png" alt="youtube"><a class="ms-3"
-                                                                href="https://www.youtube.com/watch?v=8J7ZmH0lXuk">https://www.youtube.com/watch?v=8J7ZmH0lXuk</a>
+      <td>https://linkly.com/Bn41aCOlnxj <img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/youtube-logo.png" alt="youtube">
+        <a class="ms-3" href="https://www.youtube.com/watch?v=8J7ZmH0lXuk">
+          https://www.youtube.com/watch?v=8J7ZmH0lXuk</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td class="yellow">Inactive <span><img src="./icons/unlink.svg" alt="unlink"></span></td>
+      <td class="yellow">Inactive<img src="./icons/unlink.svg" alt="unlink"></td>
       <td>Oct - 10 -2023</td>
     </tr>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/a-logo.png" alt="a"><a class="ms-3" href="https://www.adventuresinwanderlust.com/">https
-        ://www.adventuresinwanderlust.com/</a>
+      <td>https://linkly.com/Bn41aCOlnxj <img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/a-logo.png" alt="a">
+        <a class="ms-3" href="https://www.adventuresinwanderlust.com/">
+          https://www.adventuresinwanderlust.com/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>4313</td>
-      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active<img src="./icons/link.svg" alt="link"></td>
       <td>Oct - 08 -2023</td>
     </tr>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/v-logo.png" alt="v"><a class="ms-3" href="https://vimeo.com/625257654">https://vimeo
-        .com/625257654</a>
+      <td>https://linkly.com/Bn41aCOlnxj <img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/v-logo.png" alt="v">
+        <a class="ms-3" href="https://vimeo.com/625257654">
+          https://vimeo.com/625257654</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1013</td>
-      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active<img src="./icons/link.svg" alt="link"></td>
       <td>Oct - 01 -2023</td>
     </tr>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/unsplash-logo.png" alt="twitter"><a class="ms-3"
-                                                                 href="https://unsplash.com/photos/2KjNwOzFfVQ">https://unsplash.com/photos/2KjNwOzFfVQ</a>
+      <td>https://linkly.com/Bn41aCOlnxj<img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/unsplash-logo.png" alt="twitter">
+        <a class="ms-3" href="https://unsplash.com/photos/2KjNwOzFfVQ">
+          https://unsplash.com/photos/2KjNwOzFfVQ</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1313</td>
-      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active<img src="./icons/link.svg" alt="link"></td>
       <td>Sep - 20 -2023</td>
     </tr>
     <tr>
-      <td>https://linkly.com/Bn41aCOlnxj <span><img src="./icons/copy.svg" alt="copy"></span></td>
-      <td><img src="./images/youtube-logo.png" alt="youtube"><a class="ms-3"
-                                                                href="https://www.travelwiththejoneses.com/">https://www.travelwiththejoneses.com/</a>
+      <td>https://linkly.com/Bn41aCOlnxj<img src="./icons/copy.svg" alt="copy"></td>
+      <td><img src="./images/youtube-logo.png" alt="youtube">
+        <a class="ms-3" href="https://www.travelwiththejoneses.com/">
+          https://www.travelwiththejoneses.com/</a>
       </td>
       <td><img src="./icons/qr.svg" alt="qr code"></td>
       <td>1423</td>
-      <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
+      <td class="green">Active<img src="./icons/link.svg" alt="link"></td>
       <td>Sep - 18 -2023</td>
     </tr>
     </tbody>
   </table>
 
-  <div class="container footer sticky-bottom d-flex align-items-center justify-content-center">
-    <span>
-      <a class="link-register" href="#">Register Now</a> to enjoy Unlimited History</span>
+
+  <div class="footer fixed-bottom d-flex align-items-center justify-content-center">
+    <a class="link-register" href="#">Register Now</a> to enjoy Unlimited History
   </div>
 
 </div>
 
 <script>
+  const tbody = document.querySelector('tbody')
   const inputbar = document.querySelector('.searchbar')
+  const date = new Date().toLocaleDateString('en-us', { day: 'numeric', month: 'short', year: 'numeric' })
+  const currentDate = `${date.slice(0, 3)} - ${date.slice(4, 6)} - ${date.slice(8, 13)}`
+
+  let rows = getRows()
+
+  for (const item of rows) {
+    const row = document.createElement('tr') //table row
+
+    const shortLink = document.createElement('td')
+    const copy = document.createElement('img')
+    const shortenedLink = document.createTextNode(item.shortLink)
+    copy.setAttribute('src', './icons/copy.svg')
+    copy.setAttribute('alt', 'copy')
+    shortLink.appendChild(shortenedLink)
+    shortLink.appendChild(copy)
+
+    const ogLink = document.createElement('td')
+    const icon = document.createElement('img')
+    const aTag = document.createElement('a')
+    icon.setAttribute('src', './images/twitter-logo.png')
+    icon.setAttribute('alt', 'twitter')
+    aTag.classList.add('ms-3')
+    aTag.setAttribute('href', item.link)
+    const link = document.createTextNode(item.link)
+    aTag.appendChild(link)
+    ogLink.appendChild(icon)
+    ogLink.appendChild(aTag)
+
+    const qrCode = document.createElement('td')
+    const qr = document.createElement('img')
+    qr.setAttribute('src', './icons/qr.svg')
+    qr.setAttribute('alt', 'qr code')
+    qrCode.appendChild(qr)
+
+    const clicks = document.createElement('td')
+    const count = document.createTextNode('0')
+    clicks.appendChild(count)
+
+    const status = document.createElement('td')
+    const text = document.createTextNode(`${item.status ? 'Active' : 'Inactive'}`)
+    const linkIcon = document.createElement('img')
+    status.classList.add('green')
+    linkIcon.setAttribute('src', './icons/link.svg')
+    linkIcon.setAttribute('alt', 'link')
+    status.appendChild(text)
+    status.appendChild(linkIcon)
+
+    const date = document.createElement('td')
+    const dateText = document.createTextNode(`${item.date}`)
+    date.appendChild(dateText)
+
+    row.appendChild(shortLink)
+    row.appendChild(ogLink)
+    row.appendChild(qrCode)
+    row.appendChild(clicks)
+    row.appendChild(status)
+    row.appendChild(date)
+
+    tbody.insertBefore(row, tbody.firstChild)
+  }
+
   function handleInput(event) {
     if (event.target.value && event.key === 'Enter') {
       //adding row
@@ -345,29 +412,102 @@
   }
 
   function addRow() {
-    const link = inputbar.value
+    const rows = getRows()
 
-    const row = document.createElement('tr') //makes row
-    const linkEntry = document.createElement('td') //makes shortlink div
+    const userLink = inputbar.value
+    console.log('usr input link', userLink)
+    const row = document.createElement('tr') //table row
+
+    const shortLink = document.createElement('td')
     const copy = document.createElement('img')
+    const shortenedLink = document.createTextNode(`${getShortLink(userLink)}`)
     copy.setAttribute('src', './icons/copy.svg')
     copy.setAttribute('alt', 'copy')
-    linkEntry.appendChild(copy)
-    // <tr>
-    // <td>https://linkly.com/Bn41aCOlnxj
-    //  <img src="./icons/copy.svg" alt="copy">
-    //  </td>
-    // <td>
-    //   <img src="./images/twitter-logo.png" alt="twitter"><a class="ms-3" href="https://www.twitter.com/tweets/8erelCoihu/">
-    //   https://www.twitter.com/tweets/8erelCoihu/</a>
-    // </td>
-    // <td><img src="./icons/qr.svg" alt="qr code"></td>
-    // <td>1313</td>
-    // <td class="green">Active <span><img src="./icons/link.svg" alt="link"></span></td>
-    // <td>Oct - 10 -2023</td>
-    // </tr>
+    shortLink.appendChild(shortenedLink)
+    shortLink.appendChild(copy)
+
+    const ogLink = document.createElement('td')
+    const icon = document.createElement('img')
+    const aTag = document.createElement('a')
+    icon.setAttribute('src', './images/twitter-logo.png')
+    icon.setAttribute('alt', 'twitter')
+    aTag.classList.add('ms-3')
+    aTag.setAttribute('href', `${userLink}`)
+    const link = document.createTextNode(`${userLink}`)
+    aTag.appendChild(link)
+    ogLink.appendChild(icon)
+    ogLink.appendChild(aTag)
+
+    const qrCode = document.createElement('td')
+    const qr = document.createElement('img')
+    qr.setAttribute('src', './icons/qr.svg')
+    qr.setAttribute('alt', 'qr code')
+    qrCode.appendChild(qr)
+
+    const clicks = document.createElement('td')
+    const count = document.createTextNode('0')
+    clicks.appendChild(count)
+
+    const status = document.createElement('td')
+    const text = document.createTextNode('Active')
+    const linkIcon = document.createElement('img')
+    status.classList.add('green')
+    linkIcon.setAttribute('src', './icons/link.svg')
+    linkIcon.setAttribute('alt', 'link')
+    status.appendChild(text)
+    status.appendChild(linkIcon)
+
+    const date = document.createElement('td')
+    const dateText = document.createTextNode(`${currentDate}`)
+    date.appendChild(dateText)
+
+    rows.push({
+      link: `${userLink}`,
+      shortLink: 'https://linkly.com/Bn41aCOlnxj',
+      status: true,
+      date: currentDate
+    }) //pushes the input into the array
+    inputbar.value = '' //empties the input field
+
+    row.appendChild(shortLink)
+    row.appendChild(ogLink)
+    row.appendChild(qrCode)
+    row.appendChild(clicks)
+    row.appendChild(status)
+    row.appendChild(date)
+
+    tbody.insertBefore(row, tbody.firstChild)
+
+    setRows(rows)
   }
+
+  async function getShortLink(url) {
+    const apiKey = '1059b601a457a2867c205d5505c92f6554ebf'
+    const api = `https://cutt.ly/api/api.php?key=${apiKey}&short=${url}`
+    const response = await fetch(api, {
+      mode: 'no-cors',
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:63342/',
+        'Access-Control-Allow-Credentials': 'true',
+      }
+    })
+    console.log(response)
+
+    // return shortLink
+  }
+
+  function getRows() {
+    return JSON.parse(localStorage.getItem('Links')) || []
+  }
+
+  function setRows(rows) {
+    localStorage.setItem('Links', JSON.stringify(rows))
+  }
+
+
 </script>
 
 </body>
 </html>
+
