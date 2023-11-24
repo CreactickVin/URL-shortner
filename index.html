@@ -482,19 +482,21 @@
   }
 
   async function getShortLink(url) {
-    const apiKey = '1059b601a457a2867c205d5505c92f6554ebf'
+    const apiKey = '33cbd81c8f88eb05c5c1b005e120bd8bc7a71'
     const api = `https://cutt.ly/api/api.php?key=${apiKey}&short=${url}`
     const response = await fetch(api, {
       mode: 'no-cors',
       method: 'GET',
       headers: {
         'Access-Control-Allow-Origin': 'http://localhost:63342/',
-        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Credentials': 'true'
       }
     })
-    console.log(response)
 
-    // return shortLink
+    const result = await response.json()
+
+    console.log('ANSWER-->', result)
+
   }
 
   function getRows() {
